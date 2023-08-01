@@ -5,6 +5,8 @@ from django.utils.safestring import mark_safe
 from .models import Category, Genre, Movie, MovieShots, Actor, Rating, RatingStar, Reviews
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
 
 class MovieAdminForm(forms.ModelForm):
     description = forms.CharField(label="Описание", widget=CKEditorUploadingWidget())
@@ -12,6 +14,7 @@ class MovieAdminForm(forms.ModelForm):
     class Meta:
         model = Movie
         fields = '__all__'
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
